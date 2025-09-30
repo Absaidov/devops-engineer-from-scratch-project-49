@@ -1,39 +1,40 @@
-import random
-
 from brain_games.start_engine import start_engine
+from brain_games.utils import generates_random_numbers
 
-max_number_of_numbers = 99
-description = "What is the result of the expression?"
-minimum_number = 1
-array_operators = [" - ", " * ", " + "]
+DESCRIPTION: str = "What is the result of the expression?"
+MAX_NUMBER: int = 99
+MINIMUM_NUMBER: int = 1
+NUMBER_OF_ROUNDS: int = 3
+ARRAY_OPERATORS: list[str] = [" - ", " * ", " + "]
 
 
 def main():
-    array_data = [["", ""] for _ in range(3)]
+    array_data: list[list[str]] = [["", ""] for _ in range(NUMBER_OF_ROUNDS)]
 
     for j in range(len(array_data)):
-        random_operator = random.randint(0, len(array_operators) - 1)
-        random_number1 = random.randint(minimum_number, max_number_of_numbers)
-        random_number2 = random.randint(minimum_number, max_number_of_numbers)
+        random_operator: int = generates_random_numbers(0, len(ARRAY_OPERATORS) - 1)
+        random_number1: int = generates_random_numbers(MINIMUM_NUMBER, MAX_NUMBER)
+        random_number2: int = generates_random_numbers(MINIMUM_NUMBER, MAX_NUMBER)
 
-        question = get_question(random_number1, array_operators[random_operator], random_number2)
-        result = calculate_expression(random_number1, array_operators[random_operator], random_number2)
+        question: str = get_question(random_number1, ARRAY_OPERATORS[random_operator], random_number2)
+        result = calculate_expression(random_number1, ARRAY_OPERATORS[random_operator], random_number2)
 
         array_data[j][0] = question
         array_data[j][1] = str(result)
 
-    start_engine(description, array_data)
+    start_engine(DESCRIPTION, array_data)
 
 
-def get_question(number1, operator, number2):
+def get_question(number1: int, operator: str, number2: int) -> str:
     return str(number1) + operator + str(number2)
 
 
-def calculate_expression(number1, operator, number2):
+def calculate_expression(number1:int, operator: str, number2: int) -> int:
     match operator:
         case " - ": return number1 - number2
         case " * ": return number1 * number2
         case " + ": return number1 + number2
+        case _: return 0
 
 
 if __name__ == '__main__':

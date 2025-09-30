@@ -2,7 +2,7 @@ def prompt(message):
     return input(message)
 
 
-def start_engine(description, array_data):
+def start_engine(description: str, array_data: list[list[str]]):
     print("Welcome to the Brain Games!")
     player_name = prompt("May I have your name? ")
     print(f"Hello, {player_name}!")

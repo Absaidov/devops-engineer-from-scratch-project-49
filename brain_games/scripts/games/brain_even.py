@@ -1,20 +1,20 @@
-import random
-
 from brain_games.start_engine import start_engine
+from brain_games.utils import generates_random_numbers
 
-MAX_NUMBER_OF_NUMBERS = 99
-description = "Answer 'yes' if the number is even, otherwise answer 'no'."
-
+DESCRIPTION: str = "Answer 'yes' if the number is even, otherwise answer 'no'."
+MAX_NUMBER: int = 99
+MINIMUM_NUMBER: int = 1
+NUMBER_OF_ROUNDS: int = 3
 
 def main():
-    array_data = [["", ""] for _ in range(3)]
+    array_data: list[list[str]] = [["", ""] for _ in range(NUMBER_OF_ROUNDS)]
 
     for j in range(len(array_data)):
-        random_number = random.randint(1, MAX_NUMBER_OF_NUMBERS)
+        random_number = generates_random_numbers(MINIMUM_NUMBER, MAX_NUMBER)
         array_data[j][0] = str(random_number)
         array_data[j][1] = "yes" if is_even(random_number) else "no"
 
-    start_engine(description, array_data)
+    start_engine(DESCRIPTION, array_data)
 
 
 def is_even(number):
