@@ -15,7 +15,8 @@ def start_engine(description: str, array_data):
         if answer_from_console.lower() == answer:
             print('Correct!')
         else:
-            print(f'\'{answer_from_console}\' is wrong answer ;(. Correct answer was \'{answer}\'.')
+            print(f'\'{answer_from_console}\' is wrong answer ;(. '
+                  f'Correct answer was \'{answer}\'.')
             print(f'Let\'s try again, {player_name}!')
             return
 
