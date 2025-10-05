@@ -22,7 +22,7 @@ def is_simple(random_number: int) -> bool:
     if random_number < 2:
         return False
 
-    for i in range(2, random_number // 1 + 1):
+    for i in range(2, random_number):
         if random_number % i == 0:
             return False
 
