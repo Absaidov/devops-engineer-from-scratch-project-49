@@ -1,9 +1,7 @@
-from brain_games.start_engine import start_engine
-from brain_games.utils import generates_random_numbers
+from brain_games.scripts.start_engine import start_engine
+from brain_games.utils import generates_random_numbers, MIN_NUMBER, MAX_NUMBER
 
 DESCRIPTION: str = 'What number is missing in the progression?'
-MIN_NUMBER: int = 1
-MAX_NUMBER: int = 99
 NUMBER_OF_ROUNDS: int = 3
 MAX_NUMBER_FOR_STEP: int = 5
 MIN_ARRAY_LENGTH_NUMBER: int = 8

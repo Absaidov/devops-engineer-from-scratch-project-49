@@ -1,10 +1,8 @@
-from brain_games.start_engine import start_engine
-from brain_games.utils import generates_random_numbers
+from brain_games.scripts.start_engine import start_engine
+from brain_games.utils import generates_random_numbers, MIN_NUMBER, MAX_NUMBER
 
 DESCRIPTION: str = \
     'Answer "yes" if given number is prime. Otherwise answer "no".'
-MIN_NUMBER: int = 1
-MAX_NUMBER: int = 99
 NUMBER_OF_ROUNDS: int = 3
 
 

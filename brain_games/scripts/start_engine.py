@@ -1,16 +1,15 @@
-def prompt(message):
-    return input(message)
+import prompt
 
 
 def start_engine(description: str, array_data):
     print('Welcome to the Brain Games!')
-    player_name = prompt('May I have your name? ')
+    player_name = prompt.string('May I have your name? ')
     print(f'Hello, {player_name}!')
     print(description)
 
     for question, answer in array_data:
         print(f'Question: {question}')
-        answer_from_console = prompt('Your answer: ')
+        answer_from_console = prompt.string('Your answer: ')
 
         if answer_from_console.lower() == answer:
             print('Correct!')
