@@ -1,5 +1,6 @@
 from brain_games.utils import generates_random_numbers, MIN_NUMBER, MAX_NUMBER
 
+
 def generate_round() -> tuple[str, str]:
     random_number: int = generates_random_numbers(MIN_NUMBER, MAX_NUMBER)
     answer: str = "yes" if is_simple(random_number) else "no"

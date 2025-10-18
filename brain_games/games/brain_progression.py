@@ -28,7 +28,6 @@ def generate_round() -> tuple[str, str]:
     return progression_str.strip(), str(hidden_number)
 
 
-
 def generate_sequence(next_random_number: int,
                       number_of_array_length: int,
                       step_of_sub_sequence: int) -> list[int]:

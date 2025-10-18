@@ -10,6 +10,7 @@ def generate_round() -> tuple[str, str]:
 
     return question, result
 
+
 def get_gcd(number1: int, number2: int) -> int:
     if number2 == 0:
         return number1

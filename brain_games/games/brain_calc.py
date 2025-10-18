@@ -2,6 +2,7 @@ from brain_games.utils import generates_random_numbers, MIN_NUMBER, MAX_NUMBER
 
 ARRAY_OPERATORS: list[str] = [' - ', ' * ', ' + ']
 
+
 def generate_round() -> tuple[str, str]:
     random_operator: int = generates_random_numbers(
         0,
