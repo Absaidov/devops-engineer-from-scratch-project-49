@@ -1,28 +1,16 @@
-from brain_games.scripts.start_engine import start_engine
 from brain_games.utils import generates_random_numbers, MIN_NUMBER, MAX_NUMBER
 
-DESCRIPTION: str = 'Find the greatest common divisor of given numbers.'
-NUMBER_OF_ROUNDS: int = 3
 
+def generate_round() -> tuple[str, str]:
+    number1: int = generates_random_numbers(MIN_NUMBER, MAX_NUMBER)
+    number2: int = generates_random_numbers(MIN_NUMBER, MAX_NUMBER)
 
-def main():
-    array_data = []
+    question: str = f"{number1} {number2}"
+    result = str(get_gcd(number1, number2))
 
-    for _ in range(NUMBER_OF_ROUNDS):
-        number1: int = generates_random_numbers(MIN_NUMBER, MAX_NUMBER)
-        number2: int = generates_random_numbers(MIN_NUMBER, MAX_NUMBER)
-        question: str = f"{number1} {number2}"
-        result = str(get_gcd(number1, number2))
-        array_data.append((question, str(result)))
-
-    start_engine(DESCRIPTION, array_data)
-
+    return question, result
 
 def get_gcd(number1: int, number2: int) -> int:
     if number2 == 0:
         return number1
     return get_gcd(number2, number1 % number2)
-
-
-if __name__ == '__main__':
-    main()
