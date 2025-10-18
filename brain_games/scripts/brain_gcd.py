@@ -7,5 +7,6 @@ DESCRIPTION: str = 'Find the greatest common divisor of given numbers.'
 def main():
     start_engine(DESCRIPTION, generate_round)
 
+
 if __name__ == '__main__':
     main()
