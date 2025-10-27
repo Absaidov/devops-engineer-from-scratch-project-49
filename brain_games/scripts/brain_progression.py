@@ -1,5 +1,5 @@
 from brain_games.games.brain_progression import generate_round
-from brain_games.scripts.start_engine import start_engine
+from brain_games.start_engine import start_engine
 
 DESCRIPTION: str = 'What number is missing in the progression?'
 

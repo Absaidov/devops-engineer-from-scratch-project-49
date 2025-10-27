@@ -1,4 +1,4 @@
-from brain_games.scripts.start_engine import start_engine
+from brain_games.start_engine import start_engine
 from brain_games.games.brain_even import DESCRIPTION, generate_round
 
 
